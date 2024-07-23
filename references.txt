@@ -1,0 +1,10 @@
+Proof of Euler Lagrange equation
+
+https://web.mit.edu/~jgross/Public/least_action/Principle%20of%20Least%20Action%20with%20Derivation.html
+
+wiki article
+
+https://en.wikipedia.org/wiki/Euler–Lagrange_equation
+
+Noubir's Notes 
+

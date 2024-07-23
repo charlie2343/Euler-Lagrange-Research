@@ -1,0 +1,20 @@
+
+Week 4
+
+0. warm up: straight line example 
+
+1. Find action of a projectile using Lagrangian. 
+
+2. Write down the details Spring Pendulum (several function of a single variable)
+
+
+Week 5
+
+1. Clean Up Arc Length
+
+2. Work on pendulum 
+
+3. Work on more examples 
+ - From TomRocksMaths or perhaps an easier spring/pendulum example.
+ 
+4. Clean up the Proof. 

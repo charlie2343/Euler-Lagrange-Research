@@ -1,45 +1,63 @@
 %% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[english]{amsart}
-\usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
+% \documentclass[english]{amsart}
+\documentclass[12pt,reqno]{article}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin9]{inputenc}
 \usepackage{amstext}
 \usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{xcolor}
 
+\newtheorem{theorem}{Theorem}
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
+% \numberwithin{equation}{section}
+% \numberwithin{figure}{section}
 
 \makeatother
 
-\usepackage{babel}
+% \usepackage{babel}
 \begin{document}
-E-L equation proof
+
 
 \begin{abstract}
-Abstract: find a function x(t) that extremizes the functional L. 
+Abstract: find a function $x(t)$ that extremizes the functional $L$. Here we are going to outline the 
+proof of the Euler Lagrange equation.
 \end{abstract}
 
-let x(t) be the functino that extremizes the functional L(x(t)) =
-$\int x(t)d$. Let A(t) be the function that represents the divigergence
-from the idealized path x(t). Let $A(t_{1})=A(t_{2})=0$. All possible
-paths can be represented by x(t,a) = x(t) + aA(t) where a parameterizes
+
+\section{Theorem Statement and Proof}\label{thm:EL}
+
+
+\begin{theorem}
+\textcolor{red}{Please state theorem precisely}
+\end{theorem}
+
+\begin{proof}
+
+
+Let $x(t)$ be the function that extremizes the functional \textcolor{red}{What are the bounds for the integral?}$$L(x(t)) =
+\int x(t)dt.$$ \textcolor{red}{Why does $x$ even exist.} Let $A(t)$ be the function that represents the divergence \textcolor{red}{what do you mean by divergence exactly?}
+from the idealized path $x(t)$. Let $A(t_{1})=A(t_{2})=0$. All possible
+paths can be represented by $x(t,a) = x(t) + aA(t)$ where a parameterizes
 the divergence of the path. 
 
-let L(a) = $\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ be functional
-parameterized by a. 
+Let $$L(a) = \int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt, $$ be functional
+parameterized by $a$. 
 
-Note when a = 0 $\frac{dL}{da}$=0. 
+Note when $a = 0$, $\frac{dL}{da}$=0. 
 
 $\frac{dL}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$
 
 $0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt$
 
+ 
 \begin{align*}
-\frac{\partial x}{\partial a} & =A(t)\\
-\frac{\partial\dot{x}}{\partial a} & =\frac{\partial x}{\partial a}\times\frac{d}{dt}=A'(t)
+    \frac{\partial x}{\partial a} & =A(t)\\
+    \frac{\partial\dot{x}}{\partial a} & =\frac{\partial x}{\partial a}\times\frac{d}{dt}=A'(t)
 \end{align*}
+
 
 \[
 0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\cdot A(t)+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)
@@ -66,27 +84,62 @@ As $A(t)$ is arbitrary everywhere on the interval
 proving Euler's equation. This equation must be satisfied for a function
 x(t) that extremizes the functional L. 
 
-\section*{Arc-Length}
+\section{Applications}
+\subsection*{Arc-Length}
 
-Find the function x(t) that extremizes the functional 
+An immediate consequence of the Euler-Lagrange equation is the classical 
+fact that the shortest distance between two points is a straight line. We will 
+show this derivation now.
+\begin{theorem}\label{thm:arc-length}
+Let $a$ and $b$ be two real numbers with $a < b$. Let $c$
+and $d$ be two arbitrary real numbers. Then the unique differentiable function $x(t)$ that extremizes the functional
 \[
-S=\int\sqrt{1-(\frac{dx}{dt})^{2}}dt
+S(x)=\int_a^b \sqrt{1+(\frac{dx}{dt})^{2}}dt. 
 \]
+is the linear function $x(t) = mt + y_0$ for some real numbers $m$ and $y_0$.
+\end{theorem}
 
-This is the functional that calculates the arc length of a given path.
+Note that the integrand in Theorem~\ref{thm:arc-length} is precisely the arc-length formula 
+from Calculus. Note we can solve for $m$ and $y_0$ \textcolor{red}{How?}.
+
+Note that we call $S$ a functional since it takes in a function as the 
+input and outputs a real number.
+% This is the functional that calculates the arc length of a given path.
+
+\begin{proof}
+
+Let $x(t)$ be the function that extremizes $S(x)$. \textcolor{red}{Why does this exist?}
+
+The integrand in $S$ is 
+\[L(t,x,x') = \sqrt{1+(x')^{2}}.\]
+
+We know from Theorem~\ref{thm:EL} (Euler Lagrange Equation) and the fact that $x$ minimizes $S$, that 
+\[\frac{dL}{dx} = \frac{d}{dt}\frac{dL}{dx'}.\]
+Since $x$ is not present on in $L(t,x,x')$, we have
+\[\frac{dL}{dx} = 0.\]
+So we have (\textcolor{red}{fix these equations})
+
+
 \begin{align*}
-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =\frac{df}{dx}\\
-\frac{d}{dt}\frac{-\dot{x}}{\sqrt{1-(\dot{x})^{2}}}=0\\
-\frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}=0\\
-\frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}=0
+    0 &= \frac{d}{dt}\frac{dL}{dx'} \\
+    &=  \frac{d}{dt}\frac{-\dot{x}}{\sqrt{1-(\dot{x})^{2}}}\\
+ & = \frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}\\
+& = \frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}=0
 \end{align*}
-
 Thus 
-\begin{align*}
-\ddot{x} & =0\\
-\int\int\ddot{x}dt & =\int\int0\,dt\\
-x & =mt+b
-\end{align*}
+$$\ddot{x}  =0 ,$$
+on the interval $(a,b)$ \textcolor{red}{optional: why?}.
+% \int\int\ddot{x}dt & =\int\int0\,dt\\
+Therefore, from Calculus, we know there are 
+constant $m$ and $y_{0}$ such that
+$$
+x  =mt+y_0
+$$
+
+
+\end{proof}
+
+\subsection{Spring Pendulum}
 
 Proving the shortest distance between two points is a straight line. 
 
@@ -132,4 +185,10 @@ m(l+x)^{2}\ddot{\theta}=-mg(l+x)sin(\theta)
 
 This equation reveals that $\text{mass}$ $\times$tangential acceleration
 = torque
+
+\end{proof}
+
+
+
+
 \end{document}

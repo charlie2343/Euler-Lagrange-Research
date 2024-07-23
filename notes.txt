@@ -1,0 +1,21 @@
+
+To add changes to remote 
+
+git add . 
+git commit -m "initial commit"
+git push 
+
+To retrieve changes from remote
+
+git pull 
+
+
+To Make a New branch 
+
+git checkout -b new-branch-name
+
+To see branches, 
+
+git branch -a 
+
+
