@@ -1,0 +1,135 @@
+%% LyX 2.3.7 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amstext}
+\usepackage{amsthm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+E-L equation proof
+
+\begin{abstract}
+Abstract: find a function x(t) that extremizes the functional L. 
+\end{abstract}
+
+let x(t) be the functino that extremizes the functional L(x(t)) =
+$\int x(t)d$. Let A(t) be the function that represents the divigergence
+from the idealized path x(t). Let $A(t_{1})=A(t_{2})=0$. All possible
+paths can be represented by x(t,a) = x(t) + aA(t) where a parameterizes
+the divergence of the path. 
+
+let L(a) = $\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ be functional
+parameterized by a. 
+
+Note when a = 0 $\frac{dL}{da}$=0. 
+
+$\frac{dL}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$
+
+$0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt$
+
+\begin{align*}
+\frac{\partial x}{\partial a} & =A(t)\\
+\frac{\partial\dot{x}}{\partial a} & =\frac{\partial x}{\partial a}\times\frac{d}{dt}=A'(t)
+\end{align*}
+
+\[
+0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\cdot A(t)+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)
+\]
+
+Using Integration by parts: 
+\begin{align*}
+\int\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)dt & =\frac{\partial f}{\partial\dot{x}}A(t)\Vert_{t_{1}}^{t_{2}}-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt\\
+ & =-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt
+\end{align*}
+
+Thus
+\begin{align*}
+0 & =\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\cdot A(t)-\frac{d}{dt}\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A(t)dt\\
+ & =\int A(t)\cdot(\frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}})dt
+\end{align*}
+
+As $A(t)$ is arbitrary everywhere on the interval 
+\begin{align*}
+\frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =0\\
+\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =\frac{df}{dx}
+\end{align*}
+
+proving Euler's equation. This equation must be satisfied for a function
+x(t) that extremizes the functional L. 
+
+\section*{Arc-Length}
+
+Find the function x(t) that extremizes the functional 
+\[
+S=\int\sqrt{1-(\frac{dx}{dt})^{2}}dt
+\]
+
+This is the functional that calculates the arc length of a given path.
+\begin{align*}
+\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =\frac{df}{dx}\\
+\frac{d}{dt}\frac{-\dot{x}}{\sqrt{1-(\dot{x})^{2}}}=0\\
+\frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}=0\\
+\frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}=0
+\end{align*}
+
+Thus 
+\begin{align*}
+\ddot{x} & =0\\
+\int\int\ddot{x}dt & =\int\int0\,dt\\
+x & =mt+b
+\end{align*}
+
+Proving the shortest distance between two points is a straight line. 
+
+Spring pendulum
+
+\[
+U=mg(l+x)cos(\theta)+\frac{1}{2}kx^{2}
+\]
+
+The Kinetic energy of the system is the linear kinetic energy of the
+spring and the tangential Kinetic energy. 
+
+\[
+K=\frac{1}{2}m\dot{x}^{2}+\frac{1}{2}m(l+x)^{2}\dot{\theta}^{2}
+\]
+
+These energies are combined to make the Lagraganian
+\[
+L=K+U
+\]
+
+Let f(x) be the function that extremizes the action and thus is the
+actual motion of the ball linearly. 
+
+To find the function f(x) the following equation must be satisfied:
+\begin{align*}
+\frac{d}{dt}\frac{dL}{d\dot{x}} & =\frac{dL}{dx}\\
+m\ddot{x} & =-mgsin(\theta)+kx+m(l+x)\dot{\theta}^{2}
+\end{align*}
+
+The RHS is the ma part of Newtons second law and the LHS is the gravitational
+tangential force, the spring force, and the centrifugal force. 
+
+Solving this, gives f(x). 
+
+\[
+\frac{d}{dt}\frac{dL}{d\dot{\theta}}=\frac{dL}{d\theta}
+\]
+
+\[
+m(l+x)^{2}\ddot{\theta}=-mg(l+x)sin(\theta)
+\]
+
+This equation reveals that $\text{mass}$ $\times$tangential acceleration
+= torque
+\end{document}
