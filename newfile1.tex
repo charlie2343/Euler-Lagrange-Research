@@ -31,15 +31,22 @@ proof of the Euler Lagrange equation.
 
 
 \begin{theorem}
-\textcolor{red}{Please state theorem precisely}
+    Let J be a functional such that $J = \int_{t_{1}}^{t_{2}}L(t,f(t),f'(t))$Let $x(t)$ be a function that extremizes J, the following equation must be satified: 
+
+
+    \begin{align*}
+        \frac{d}{dt} * \frac{\partial f}{\partial\dot{x}} = \frac{\partial f}{\partial x}
+    \end{align*}
+    
+\textcolor{red}{Please state theorem precisely} 
 \end{theorem}
 
 \begin{proof}
 
 
-Let $x(t)$ be the function that extremizes the functional \textcolor{red}{What are the bounds for the integral?}$$L(x(t)) =
-\int x(t)dt.$$ \textcolor{red}{Why does $x$ even exist.} Let $A(t)$ be the function that represents the divergence \textcolor{red}{what do you mean by divergence exactly?}
-from the idealized path $x(t)$. Let $A(t_{1})=A(t_{2})=0$. All possible
+Let $x(t)$ be the function that extremizes the functional \textcolor{red}{What are the bounds for the integral?}$$R(x(t)) =
+\int_{t_{1}}^{t_{2}} x(t)dt.$$ \textcolor{red}{Why does $x$ even exist.} Let $A(t)$ be an arbitrary function that represents the divergence \textcolor{red}{what do you mean by divergence exactly?}
+from the extremized path $x(t)$. Let $A(t_{1})=A(t_{2})=0$. All possible
 paths can be represented by $x(t,a) = x(t) + aA(t)$ where a parameterizes
 the divergence of the path. 
 
@@ -48,8 +55,9 @@ parameterized by $a$.
 
 Note when $a = 0$, $\frac{dL}{da}$=0. 
 
-$\frac{dL}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$
 
+$\frac{dL}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ \\ 
+so \\
 $0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt$
 
  
@@ -65,7 +73,7 @@ $0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\p
 
 Using Integration by parts: 
 \begin{align*}
-\int\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)dt & =\frac{\partial f}{\partial\dot{x}}A(t)\Vert_{t_{1}}^{t_{2}}-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt\\
+\int\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)dt & =\frac{\partial f}{\partial\dot{x}}A(t)\vert_{t_{1}}^{t_{2}}-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt\\
  & =-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt
 \end{align*}
 
@@ -96,11 +104,12 @@ and $d$ be two arbitrary real numbers. Then the unique differentiable function $
 \[
 S(x)=\int_a^b \sqrt{1+(\frac{dx}{dt})^{2}}dt. 
 \]
+
 is the linear function $x(t) = mt + y_0$ for some real numbers $m$ and $y_0$.
 \end{theorem}
 
 Note that the integrand in Theorem~\ref{thm:arc-length} is precisely the arc-length formula 
-from Calculus. Note we can solve for $m$ and $y_0$ \textcolor{red}{How?}.
+from Calculus.  We can solve for $m$ and $y_0$ \textcolor{red}{How?}.
 
 Note that we call $S$ a functional since it takes in a function as the 
 input and outputs a real number.
@@ -122,11 +131,13 @@ So we have (\textcolor{red}{fix these equations})
 
 \begin{align*}
     0 &= \frac{d}{dt}\frac{dL}{dx'} \\
+    \text{The Chain Rule gives:} \\
     &=  \frac{d}{dt}\frac{-\dot{x}}{\sqrt{1-(\dot{x})^{2}}}\\
- & = \frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}\\
+    \text{The quotient rule} \\
+ & = \frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}\\ 
 & = \frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}=0
 \end{align*}
-Thus 
+Thus $/dot{x}$ must be 0 
 $$\ddot{x}  =0 ,$$
 on the interval $(a,b)$ \textcolor{red}{optional: why?}.
 % \int\int\ddot{x}dt & =\int\int0\,dt\\
