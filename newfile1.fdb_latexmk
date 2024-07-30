@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1722223911 "/Users/macbook/Euler-Lagrange-Research/newfile1.tex" "newfile1.pdf" "newfile1" 1722223911
-  "/Users/macbook/Euler-Lagrange-Research/newfile1.tex" 1722223911 6578 e488ddc50944409598f7c287520823d8 ""
+["pdflatex"] 1722380290 "/Users/macbook/Euler-Lagrange-Research/newfile1.tex" "newfile1.pdf" "newfile1" 1722380290
+  "/Users/macbook/Euler-Lagrange-Research/newfile1.tex" 1722380290 6773 5bcd9d9a392307c35c9eb96a83a0cf51 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -50,8 +50,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668662142 2826449 4334cff923ee95b3c1d6f7316a71e7e3 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "newfile1.aux" 1722223911 415 b20cd507c5e0f6152a9b86c3f72f7fe8 "pdflatex"
-  "newfile1.tex" 1722223911 6578 e488ddc50944409598f7c287520823d8 ""
+  "newfile1.aux" 1722380290 415 bf3ea9b6d7bb0bf63bf4933f9bb8e2c5 "pdflatex"
+  "newfile1.tex" 1722380290 6773 5bcd9d9a392307c35c9eb96a83a0cf51 ""
   (generated)
   "newfile1.aux"
   "newfile1.log"

@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{xcolor}
 
+
 \newtheorem{theorem}{Theorem}
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
@@ -31,11 +32,11 @@ proof of the Euler Lagrange equation.
 
 
 \begin{theorem}
-    Let J be a functional such that $J = \int_{t_{1}}^{t_{2}}L(t,f(t),f'(t))$Let $x(t)$ be a function that extremizes J, the following equation must be satified: 
+    For a functional J such that $J[f] = \int_{t_{1}}^{t_{2}}L(t,f(t),f'(t))$ with an extremum on the interval $t_1 - t_2$, let x(t) be the function that extremizes J. Then the following equation must be satified: 
 
 
     \begin{align*}
-        \frac{d}{dt} * \frac{\partial f}{\partial\dot{x}} = \frac{\partial f}{\partial x}
+        \frac{d}{dt} * \frac{\partial L}{\partial\dot{x}} = \frac{\partial L}{\partial x}
     \end{align*}
     
 \textcolor{red}{Please state theorem precisely} 
@@ -44,26 +45,33 @@ proof of the Euler Lagrange equation.
 \begin{proof}
 
 
-Let $x(t)$ be the function that extremizes the functional \textcolor{red}{What are the bounds for the integral?}$$R(x(t)) =
-\int_{t_{1}}^{t_{2}} x(t)dt.$$ \textcolor{red}{Why does $x$ even exist.} Let $A(t)$ be an arbitrary function that represents the divergence \textcolor{red}{what do you mean by divergence exactly?}
-from the extremized path $x(t)$. Let $A(t_{1})=A(t_{2})=0$. All possible
-paths can be represented by $x(t,a) = x(t) + aA(t)$ where a parameterizes
-the divergence of the path. 
+For a functional J with an extremum on the interval $t_1 - t_2$ such that: 
+$$J(a) = \int_{t_{1}}^{t_{2}}f(x(t),\dot{x}(t),t)dt, $$
+    we wish to find the function $x(t)$ that extremizes J. \textcolor{red}{What are the bounds for the integral?}
+ \textcolor{red}{Why does $x$ even exist.} Let $A(t)$ be an arbitrary function and $A(t_{1})=A(t_{2})=0$. 
+ Therefore any continuous function from $t_1 - t_2$ can be represented with 
+ \begin{align*}
+    x(t,a) = x(t) + aA(t)
+ \end{align*}
+ where x(t,a) is a combination x(t), our function that extremizes J, and A(t), the "divergence" from that function, parameterized by a. 
+    
 
-Let $$L(a) = \int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt, $$ be functional
+Let $$J(a) = \int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt, $$ be functional
 parameterized by $a$. 
 
-Note when $a = 0$, $\frac{dL}{da}$=0. 
-
+Note when $a = 0$, $\frac{dJ}{da}$=0. 
+\\
 
 $\frac{dL}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ \\ 
-so \\
-$0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt$
 
- 
+so 
+\begin{align*}
+0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt
+\end{align*}
+
 \begin{align*}
     \frac{\partial x}{\partial a} & =A(t)\\
-    \frac{\partial\dot{x}}{\partial a} & =\frac{\partial x}{\partial a}\times\frac{d}{dt}=A'(t)
+    \frac{\partial\dot{x}}{\partial a} & =\frac{\partial x}{\partial a}\cdot\frac{d}{dt}=A'(t)
 \end{align*}
 
 
@@ -83,7 +91,7 @@ Thus
  & =\int A(t)\cdot(\frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}})dt
 \end{align*}
 
-As $A(t)$ is arbitrary everywhere on the interval 
+As $A(t)$ is arbitrary everywhere on $(t_1,t_2)$
 \begin{align*}
 \frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =0\\
 \frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =\frac{df}{dx}
@@ -137,15 +145,15 @@ So we have (\textcolor{red}{fix these equations})
  & = \frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}\\ 
 & = \frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}=0
 \end{align*}
-Thus $/dot{x}$ must be 0 
+Thus $\dot{x}$ must be 0 
 $$\ddot{x}  =0 ,$$
 on the interval $(a,b)$ \textcolor{red}{optional: why?}.
 % \int\int\ddot{x}dt & =\int\int0\,dt\\
-Therefore, from Calculus, we know there are 
-constant $m$ and $y_{0}$ such that
+Then by integrating twice we get: 
 $$
 x  =mt+y_0
 $$
+which is the equation for a line.
 
 
 \end{proof}
