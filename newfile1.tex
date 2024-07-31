@@ -28,28 +28,35 @@ proof of the Euler Lagrange equation.
 \end{abstract}
 
 
-\section{Theorem Statement and Proof}\label{thm:EL}
+\section{Theorem Statement and Proof}
 
 
-\begin{theorem}
-    For a functional J such that $J[f] = \int_{t_{1}}^{t_{2}}L(t,f(t),f'(t))$ with an extremum on the interval $t_1 - t_2$, let x(t) be the function that extremizes J. Then the following equation must be satified: 
+\begin{theorem}\label{thm:EL}
+    Let $J$ be the functional defined by \[J[f] := \int_{t_{1}}^{t_{2}}L(t,f(t),f'(t))\] with an extremum on the interval $[t_1,t_2]$. Let $x(t)$ be a $C^1[t_1,t_2]$ function that extremizes $J$. Then the following equation must be satified: 
 
 
     \begin{align*}
-        \frac{d}{dt} * \frac{\partial L}{\partial\dot{x}} = \frac{\partial L}{\partial x}
+        \frac{d}{dt} \cdot \frac{\partial L}{\partial\dot{x}} = \frac{\partial L}{\partial x}.
     \end{align*}
     
-\textcolor{red}{Please state theorem precisely} 
 \end{theorem}
+
+Recall that $C^1[a,b]$ represents the set of all functions that have a continuous derivative on $(a,b)$. Recall from Calculus every differentiable function is continuous.
 
 \begin{proof}
 
 
-For a functional J with an extremum on the interval $t_1 - t_2$ such that: 
-$$J(a) = \int_{t_{1}}^{t_{2}}f(x(t),\dot{x}(t),t)dt, $$
-    we wish to find the function $x(t)$ that extremizes J. \textcolor{red}{What are the bounds for the integral?}
- \textcolor{red}{Why does $x$ even exist.} Let $A(t)$ be an arbitrary function and $A(t_{1})=A(t_{2})=0$. 
- Therefore any continuous function from $t_1 - t_2$ can be represented with 
+By assumption in the Theorem~\ref{thm:EL}, let $x \in C^1[t_1,t_2]$ be a function that extremizes $J$. We wish to show that 
+\begin{align*}
+    \frac{d}{dt} \cdot \frac{\partial L}{\partial\dot{x}} = \frac{\partial L}{\partial x}.
+\end{align*}
+
+% For a functional J with an extremum on the interval $[t_1 , t_2]$ such that: 
+% $$J(a) = \int_{t_{1}}^{t_{2}}f(x(t),\dot{x}(t),t)dt, $$
+%     we wish to find the function $x(t)$ that extremizes J.
+
+  Let $A(t)$ be an arbitrary function and $A(t_{1})=A(t_{2})=0$. 
+ Therefore any function in $C^1[t_1 , t_2]$ can be represented with 
  \begin{align*}
     x(t,a) = x(t) + aA(t)
  \end{align*}
@@ -59,15 +66,19 @@ $$J(a) = \int_{t_{1}}^{t_{2}}f(x(t),\dot{x}(t),t)dt, $$
 Let $$J(a) = \int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt, $$ be functional
 parameterized by $a$. 
 
-Note when $a = 0$, $\frac{dJ}{da}$=0. 
+\textcolor{red}{Use sentences}
+
+Note when $a = 0$, $$\frac{dJ}{da}=0.$$ \textcolor{red}{Why? is this equation true?}
 \\
 
-$\frac{dL}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ \\ 
+$\frac{dJ}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ \\ 
 
-so 
+So, by the chain rule, we have
 \begin{align*}
-0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt
+0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt.
 \end{align*}
+
+Next sentence..
 
 \begin{align*}
     \frac{\partial x}{\partial a} & =A(t)\\
@@ -97,7 +108,9 @@ As $A(t)$ is arbitrary everywhere on $(t_1,t_2)$
 \frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =\frac{df}{dx}
 \end{align*}
 
-proving Euler's equation. This equation must be satisfied for a function
+proving Euler's equation. \textcolor{red}{So we have 
+$$\int_{t_1}^{t_2} f(t) A(t) = 0.$$ 
+Also, $A(t)$ is (basically) arbitrary. Why must $f(t) = 0$??} This equation must be satisfied for a function
 x(t) that extremizes the functional L. 
 
 \section{Applications}
@@ -112,12 +125,11 @@ and $d$ be two arbitrary real numbers. Then the unique differentiable function $
 \[
 S(x)=\int_a^b \sqrt{1+(\frac{dx}{dt})^{2}}dt. 
 \]
-
 is the linear function $x(t) = mt + y_0$ for some real numbers $m$ and $y_0$.
 \end{theorem}
 
 Note that the integrand in Theorem~\ref{thm:arc-length} is precisely the arc-length formula 
-from Calculus.  We can solve for $m$ and $y_0$ \textcolor{red}{How?}.
+from Calculus.  We can solve for $m$ and $y_0$. \textcolor{red}{How? Solve for slope and then the y intercept.}
 
 Note that we call $S$ a functional since it takes in a function as the 
 input and outputs a real number.
@@ -125,7 +137,7 @@ input and outputs a real number.
 
 \begin{proof}
 
-Let $x(t)$ be the function that extremizes $S(x)$. \textcolor{red}{Why does this exist?}
+Let $x(t)$ be the function that extremizes $S(x)$. \textcolor{red}{Why does this exist? We can see from various statments of the Euler Lagrange that IF a minimizer exists, then it must satisfy the Euler Lagrange equation. This does not prove that a minimizer exists. Furthermore, even if we find a solution to the Euler Lagrange equation, it's not clear that this is a minimizer. (for instance, think of $y=x^3$, which has a point where the derivative is 0 but is neither a max or min.)} 
 
 The integrand in $S$ is 
 \[L(t,x,x') = \sqrt{1+(x')^{2}}.\]
@@ -134,24 +146,27 @@ We know from Theorem~\ref{thm:EL} (Euler Lagrange Equation) and the fact that $x
 \[\frac{dL}{dx} = \frac{d}{dt}\frac{dL}{dx'}.\]
 Since $x$ is not present on in $L(t,x,x')$, we have
 \[\frac{dL}{dx} = 0.\]
-So we have (\textcolor{red}{fix these equations})
+So we have (\textcolor{red}{fix these equations: should be 
+a plus coming from the arc length formula})
 
+% \text{The quotient rule} \\
+% \text{The Chain Rule gives:} \\
 
 \begin{align*}
     0 &= \frac{d}{dt}\frac{dL}{dx'} \\
-    \text{The Chain Rule gives:} \\
     &=  \frac{d}{dt}\frac{-\dot{x}}{\sqrt{1-(\dot{x})^{2}}}\\
-    \text{The quotient rule} \\
  & = \frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}\\ 
-& = \frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}=0
+& = \frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}.
 \end{align*}
+In the second inequality we used the quotient rule from Calculus and in the third line we used the chain rule.
 Thus $\dot{x}$ must be 0 
 $$\ddot{x}  =0 ,$$
-on the interval $(a,b)$ \textcolor{red}{optional: why?}.
+on the interval $(a,b)$. \textcolor{red}{ Why is it true that 
+a function with $x'' = 0$ must be a line?}
 % \int\int\ddot{x}dt & =\int\int0\,dt\\
 Then by integrating twice we get: 
 $$
-x  =mt+y_0
+x(t)  =mt+y_0
 $$
 which is the equation for a line.
 
