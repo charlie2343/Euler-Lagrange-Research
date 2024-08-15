@@ -68,7 +68,7 @@ parameterized by $a$.
 
 \textcolor{red}{Use sentences}
 
-Note when $a = 0$, $$\frac{dJ}{da}=0.$$ \textcolor{red}{Why? is this equation true?}
+Note when $a = 0$, x(t,a) becomes x(t). Thus when $a = 0$ J has an extremum by defintion of x(t) and  $$\frac{dJ}{da}\vert_{a=0} =0.$$ \textcolor{red}{Why? is this equation true?}
 \\
 
 $\frac{dJ}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ \\ 
@@ -78,7 +78,8 @@ So, by the chain rule, we have
 0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\frac{\partial x}{\partial a}+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\frac{\partial\dot{x}}{\partial a}dt.
 \end{align*}
 
-Next sentence..
+
+Solving for  $\frac{\partial x}{\partial a}$ and $\frac{\partial \dot{x}}{\partial a}$ we get 
 
 \begin{align*}
     \frac{\partial x}{\partial a} & =A(t)\\
@@ -87,7 +88,7 @@ Next sentence..
 
 
 \[
-0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\cdot A(t)+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)
+0=\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\cdot A(t)+\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t).
 \]
 
 Using Integration by parts: 
@@ -96,13 +97,13 @@ Using Integration by parts:
  & =-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt
 \end{align*}
 
-Thus
+Thus the equation becomes,
 \begin{align*}
 0 & =\int_{t_{1}}^{t_{2}}\frac{\text{\ensuremath{\partial f}}}{\partial x}\cdot A(t)-\frac{d}{dt}\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A(t)dt\\
  & =\int A(t)\cdot(\frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}})dt
 \end{align*}
 
-As $A(t)$ is arbitrary everywhere on $(t_1,t_2)$
+As $A(t)$ is arbitrary, by the fundamental lemma of calculus of variations:
 \begin{align*}
 \frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =0\\
 \frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =\frac{df}{dx}
@@ -110,7 +111,7 @@ As $A(t)$ is arbitrary everywhere on $(t_1,t_2)$
 
 proving Euler's equation. \textcolor{red}{So we have 
 $$\int_{t_1}^{t_2} f(t) A(t) = 0.$$ 
-Also, $A(t)$ is (basically) arbitrary. Why must $f(t) = 0$??} This equation must be satisfied for a function
+Also, $A(t)$ is (basically) arbitrary. Why must $f(t) = 0$??}  This equation must be satisfied for a function
 x(t) that extremizes the functional L. 
 
 \section{Applications}
@@ -128,8 +129,7 @@ S(x)=\int_a^b \sqrt{1+(\frac{dx}{dt})^{2}}dt.
 is the linear function $x(t) = mt + y_0$ for some real numbers $m$ and $y_0$.
 \end{theorem}
 
-Note that the integrand in Theorem~\ref{thm:arc-length} is precisely the arc-length formula 
-from Calculus.  We can solve for $m$ and $y_0$. \textcolor{red}{How? Solve for slope and then the y intercept.}
+
 
 Note that we call $S$ a functional since it takes in a function as the 
 input and outputs a real number.
@@ -139,7 +139,7 @@ input and outputs a real number.
 
 Let $x(t)$ be the function that extremizes $S(x)$. \textcolor{red}{Why does this exist? We can see from various statments of the Euler Lagrange that IF a minimizer exists, then it must satisfy the Euler Lagrange equation. This does not prove that a minimizer exists. Furthermore, even if we find a solution to the Euler Lagrange equation, it's not clear that this is a minimizer. (for instance, think of $y=x^3$, which has a point where the derivative is 0 but is neither a max or min.)} 
 
-The integrand in $S$ is 
+The integrand in $S$ can be represented by a functional L, 
 \[L(t,x,x') = \sqrt{1+(x')^{2}}.\]
 
 We know from Theorem~\ref{thm:EL} (Euler Lagrange Equation) and the fact that $x$ minimizes $S$, that 
@@ -154,15 +154,15 @@ a plus coming from the arc length formula})
 
 \begin{align*}
     0 &= \frac{d}{dt}\frac{dL}{dx'} \\
-    &=  \frac{d}{dt}\frac{-\dot{x}}{\sqrt{1-(\dot{x})^{2}}}\\
- & = \frac{-\ddot{x}\sqrt{1-(\dot{x})^{2}}+\dot{x}^{2}\ddot{x}(1-\dot{x})^{-\frac{1}{2}}}{1-(\dot{x})^{2}}\\ 
-& = \frac{\ddot{x}}{(1-\ddot{x}^{2})^{\frac{3}{2}}}.
+    &=  \frac{d}{dt}\frac{\dot{x}}{\sqrt{1+(\dot{x})^{2}}}\\
+ & = \frac{\ddot{x}\sqrt{1+(\dot{x})^{2}}-\dot{x}^{2}\ddot{x}(1+\dot{x})^{-\frac{1}{2}}}{1+(\dot{x})^{2}}\\ 
+& = \frac{\ddot{x}}{(1+\ddot{x}^{2})^{\frac{3}{2}}}.
 \end{align*}
 In the second inequality we used the quotient rule from Calculus and in the third line we used the chain rule.
-Thus $\dot{x}$ must be 0 
+Thus $\ddot{x}$ must be 0 
 $$\ddot{x}  =0 ,$$
 on the interval $(a,b)$. \textcolor{red}{ Why is it true that 
-a function with $x'' = 0$ must be a line?}
+a function with $x'' = 0$ must be a line?} When $\ddot{x} =0$, $\dot{x}$ is a constant. therefore x has a constant slope. 
 % \int\int\ddot{x}dt & =\int\int0\,dt\\
 Then by integrating twice we get: 
 $$
@@ -173,7 +173,10 @@ which is the equation for a line.
 
 \end{proof}
 
-\subsection{Spring Pendulum}
+We can solve for m and $y_0$, 
+To solve for M we could do rise over run for teh interval $\frac{x(a)-x(b)}{a-b}$ 
+then we can solve for $y_0$, given the point (a,x(a)) and m. 
+
 
 Proving the shortest distance between two points is a straight line. 
 
