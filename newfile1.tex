@@ -122,7 +122,7 @@ fact that the shortest distance between two points is a straight line. We will
 show this derivation now.
 \begin{theorem}\label{thm:arc-length}
 Let $a$ and $b$ be two real numbers with $a < b$. Let $c$
-and $d$ be two arbitrary real numbers. Then the unique differentiable function $x(t)$ that extremizes the functional
+and $d$ be two arbitrary real numbers. Then the unique differentiable function $x(t)$, with $x(a) = c$ and $x(b) = d$, that extremizes the functional
 \[
 S(x)=\int_a^b \sqrt{1+(\frac{dx}{dt})^{2}}dt. 
 \]
@@ -140,20 +140,19 @@ input and outputs a real number.
 Let $x(t)$ be the function that extremizes $S(x)$. \textcolor{red}{Why does this exist? We can see from various statments of the Euler Lagrange that IF a minimizer exists, then it must satisfy the Euler Lagrange equation. This does not prove that a minimizer exists. Furthermore, even if we find a solution to the Euler Lagrange equation, it's not clear that this is a minimizer. (for instance, think of $y=x^3$, which has a point where the derivative is 0 but is neither a max or min.)} 
 
 The integrand in $S$ can be represented by a functional L, 
-\[L(t,x,x') = \sqrt{1+(x')^{2}}.\]
+\[L(t,x,x') = \sqrt{1+(\dot{x})^{2}}.\]
 
 We know from Theorem~\ref{thm:EL} (Euler Lagrange Equation) and the fact that $x$ minimizes $S$, that 
-\[\frac{dL}{dx} = \frac{d}{dt}\frac{dL}{dx'}.\]
-Since $x$ is not present on in $L(t,x,x')$, we have
+\[\frac{dL}{dx} = \frac{d}{dt}\frac{dL}{d\dot{x}}.\]
+Since $x$ is not present on in $L(t,x,\dot{x})$, we have
 \[\frac{dL}{dx} = 0.\]
-So we have (\textcolor{red}{fix these equations: should be 
-a plus coming from the arc length formula})
+So we have 
 
 % \text{The quotient rule} \\
 % \text{The Chain Rule gives:} \\
 
 \begin{align*}
-    0 &= \frac{d}{dt}\frac{dL}{dx'} \\
+    0 &= \frac{d}{dt}\frac{dL}{d\dot{x}} \\
     &=  \frac{d}{dt}\frac{\dot{x}}{\sqrt{1+(\dot{x})^{2}}}\\
  & = \frac{\ddot{x}\sqrt{1+(\dot{x})^{2}}-\dot{x}^{2}\ddot{x}(1+\dot{x})^{-\frac{1}{2}}}{1+(\dot{x})^{2}}\\ 
 & = \frac{\ddot{x}}{(1+\ddot{x}^{2})^{\frac{3}{2}}}.
@@ -161,29 +160,27 @@ a plus coming from the arc length formula})
 In the second inequality we used the quotient rule from Calculus and in the third line we used the chain rule.
 Thus $\ddot{x}$ must be 0 
 $$\ddot{x}  =0 ,$$
-on the interval $(a,b)$. \textcolor{red}{ Why is it true that 
-a function with $x'' = 0$ must be a line?} When $\ddot{x} =0$, $\dot{x}$ is a constant. therefore x has a constant slope. 
-% \int\int\ddot{x}dt & =\int\int0\,dt\\
-Then by integrating twice we get: 
-$$
-x(t)  =mt+y_0
-$$
+on the interval $(a,b)$. By a consequence of Rolle's theorem, $\ddot{x} =0$, $\dot{x}$ is a constant, say $m$. Therefore x has a constant slope and 
+
+\[
+x(t)  =mt+y_0,
+\]
 which is the equation for a line.
 
 
 \end{proof}
 
 We can solve for m and $y_0$, 
-To solve for M we could do rise over run for teh interval $\frac{x(a)-x(b)}{a-b}$ 
-then we can solve for $y_0$, given the point (a,x(a)) and m. 
+To solve for $m$ we use the rise over run for the interval $$m := \frac{x(a)-x(b)}{a-b} ,$$
+then we can solve for $y_0$, given the point $(a,x(a))$ and $m$. 
 
 
-Proving the shortest distance between two points is a straight line. 
+Thus, the shortest distance between two points is a straight line. 
 
-Spring pendulum
+\subsection*{Spring pendulum}
 
 \[
-U=mg(l+x)cos(\theta)+\frac{1}{2}kx^{2}
+U=mg(l+x)\cos(\theta)+\frac{1}{2}kx^{2}
 \]
 
 The Kinetic energy of the system is the linear kinetic energy of the

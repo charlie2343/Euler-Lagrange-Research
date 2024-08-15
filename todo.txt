@@ -10,9 +10,11 @@ Week 4
 
 Week 5/6
 
-1. Clean Up Arc Length
+1. Clean Up Arc Length : DONE 
 
-2. Work on pendulum 
+2. Work on Pendulum 
+ - Write Down Just Pendulum 
+ - Come up with a simpler example 
 
 3. Work on more examples 
  - From TomRocksMaths or perhaps an easier spring/pendulum example.
