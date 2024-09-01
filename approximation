@@ -1,18 +1,52 @@
 import numpy as np
 
 g = 9.8
-L =2
-mu =0.2
-theta_0 = np.pi/3
-theta_dot = 0
+L = 2
+mu = 0.02
+theta_0 = np.pi / 6  # initial angle
+theta_dot_0 = 0  # initial velocity
+time_interval = 0.01  # delta_t
 
-def get_double_dot(theta,theta_dot):
-    return -mu *theta_dot - (L/g) * sin(theta)
+
+def get_double_dot(theta, theta_dot):
+    return -mu * theta_dot - (1.0 * g / L) * np.sin(theta)
+
+
+# print(get_double_dot(theta_0, theta_dot_0))
+
+np.arange(0, 10, time_interval)
+
 
 def theta(t):
+    thetas = []
+    theta_dots = []
+    theta = theta_0  # definining theta, which is initialized to the initial angle
+    theta_dot = theta_dot_0
 
-    time_interval = 0.01
-    for time in np.arrange(0,t,time_interval):
-        theta_0 += theta_dot * time_interval
-        theta_dot = get_double_dot(theta_0,theta_dot)
-    return theta_0
+    for time in np.arange(0, t, time_interval):  # equally spaced points
+        thetas.append(theta)
+        theta_dots.append(theta_dot)
+        theta_double_dot = get_double_dot(theta, theta_dot)
+        theta += theta_dot * time_interval  # linear approximation
+        theta_dot += theta_double_dot * time_interval
+
+    return thetas, theta_dots
+
+
+# plot theta vs time
+
+import matplotlib.pyplot as plt
+
+total_time = 2  # total time in seconds
+
+N = int(total_time / time_interval)
+
+time = np.arange(0, N, time_interval)
+theta_values, theta_dot_values = theta(N)
+
+plt.plot(time, theta_values)
+# plt.plot(time, theta_dot_values)
+plt.xlabel("Time")
+plt.ylabel("Theta")
+plt.title("Theta vs Time")
+plt.show()
