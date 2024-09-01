@@ -9,4 +9,6 @@ for theta in range(0,3.14159, 0.1):
 
 plt.scatter(angles,difference)
 
+
+
     
