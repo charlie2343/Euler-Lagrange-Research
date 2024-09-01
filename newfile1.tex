@@ -8,6 +8,7 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{xcolor}
+\usepackage{graphicx}
 
 
 \newtheorem{theorem}{Theorem}
@@ -71,7 +72,7 @@ parameterized by $a$.
 Note when $a = 0$, x(t,a) becomes x(t). Thus when $a = 0$ J has an extremum by defintion of x(t) and  $$\frac{dJ}{da}\vert_{a=0} =0.$$ \textcolor{red}{Why? is this equation true?}
 \\
 
-$\frac{dJ}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$ \\ 
+$$\frac{dJ}{da}=\frac{d}{da}\int_{t_{1}}^{t_{2}}f(x(t,a),\dot{x}(t,a),t)dt$$ \\ 
 
 So, by the chain rule, we have
 \begin{align*}
@@ -93,7 +94,7 @@ Solving for  $\frac{\partial x}{\partial a}$ and $\frac{\partial \dot{x}}{\parti
 
 Using Integration by parts: 
 \begin{align*}
-\int\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)dt & =\frac{\partial f}{\partial\dot{x}}A(t)\vert_{t_{1}}^{t_{2}}-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt\\
+\int\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}\cdot A'(t)dt & =\frac{\partial f}{\partial\dot{x}}A(t)\bigr\vert_{t_{1}}^{t_{2}}-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt\\
  & =-\int\frac{d}{dt}\cdot\frac{\text{\ensuremath{\partial f}}}{\partial\dot{x}}*A(t)dt
 \end{align*}
 
@@ -103,7 +104,7 @@ Thus the equation becomes,
  & =\int A(t)\cdot(\frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}})dt
 \end{align*}
 
-As $A(t)$ is arbitrary, by the fundamental lemma of calculus of variations:
+As $A(t)$ is arbitrary, by the fundamental lemma of calculus of variations (appendix):
 \begin{align*}
 \frac{\partial f}{\partial x}-\frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =0\\
 \frac{d}{dt}\cdot\frac{\partial f}{\partial\dot{x}} & =\frac{df}{dx}
@@ -111,7 +112,7 @@ As $A(t)$ is arbitrary, by the fundamental lemma of calculus of variations:
 
 proving Euler's equation. \textcolor{red}{So we have 
 $$\int_{t_1}^{t_2} f(t) A(t) = 0.$$ 
-Also, $A(t)$ is (basically) arbitrary. Why must $f(t) = 0$??}  This equation must be satisfied for a function
+Also, $A(t)$ is (basically) arbitrary. Why must $f(t) = 0$??}  This equation must be satisfied for a funcwation
 x(t) that extremizes the functional L. 
 
 \section{Applications}
@@ -177,52 +178,105 @@ then we can solve for $y_0$, given the point $(a,x(a))$ and $m$.
 
 Thus, the shortest distance between two points is a straight line. 
 
-\subsection*{Spring pendulum}
+\pagebreak
+\subsection*{Pendulum}
 
+
+
+\begin{figure}[h]
+    \centering
+    \rotatebox{270}{\includegraphics[width=\textwidth]{images/IMG_2187.JPG}}
+    \caption{Pendulum system}
+    \label{fig:example_image}
+\end{figure}
+The potential energy of the system is 
 \[
-U=mg(l+x)\cos(\theta)+\frac{1}{2}kx^{2}
+U = mgy = mg(l-lcos(\theta)).
+\]
+The kinetic energy is
+\[
+T = \frac{1}{2}m (v_{tangential})^2 = \frac{1}{2}m (l \dot{\theta})^2.
+\]
+Therefore our Lagrangian becomes
+\[
+L = T-U = \frac{1}{2}m (l \dot{\theta})^2-mg(l-lcos(\theta)).
+\]
+
+To find the equation of motion we use the Euler-Lagrage equation
+\begin{align*}
+    \frac{d}{dt}\frac{dL}{d\dot{\theta}}=\frac{dL}{d\theta}\\
+    \frac{d}{dt} m l^2 \dot{\theta} = -m gl sin(\theta)\\
+    \ddot{\theta} = -\frac{g}{l}sin(\theta)
+\end{align*}
+This equation of motion is a non-linear differential equation and is hard to solve. 
+We can linearize the equation by using the approximation that
+for small $\theta$ ($<20^\circ$), $\text{sin}(\theta) \approx \theta$. 
+\begin{align*}
+    \frac{d^2\theta}{dt^2} = \frac{g}{l}\theta
+\end{align*}
+Solving for theta we get *see longer calculation section: 
+\[
+\theta = asin(\sqrt{\frac{g}{l}}t + b)
+\]
+\pagebreak
+\subsection*{Spring pendulum}
+\begin{figure}[h]
+    \centering
+    \rotatebox{270}{\includegraphics[width=\textwidth]{images/IMG_2188.JPG}}
+    \caption{Pendulum system}
+    \label{fig:example_image}
+\end{figure}
+The potential energy of the system is a combination of the gravitational potential and the 
+spring potential. 
+\[
+U=mg(l+x -(l+x)\cos(\theta))+\frac{1}{2}kx^{2}
 \]
 
 The Kinetic energy of the system is the linear kinetic energy of the
 spring and the tangential Kinetic energy. 
 
 \[
-K=\frac{1}{2}m\dot{x}^{2}+\frac{1}{2}m(l+x)^{2}\dot{\theta}^{2}
+T=\frac{1}{2}m\dot{x}^{2}+\frac{1}{2}m(l+x)^{2}\dot{\theta}^{2}
 \]
 
-These energies are combined to make the Lagraganian
+The Lagraganian is the kinetic minus potential energy
 \[
-L=K+U
+L=T-U.
+\]
+This yields 
+\[
+L = \frac{1}{2}m(((l+x)\dot{\theta})^2 + \dot{x}^2)-mg(l+x)(1-cos(\theta)) - \frac{1}{2}kx^2
 \]
 
-Let f(x) be the function that extremizes the action and thus is the
-actual motion of the ball linearly. 
-
-To find the function f(x) the following equation must be satisfied:
+To find the equation of motion with respect to x, we use
 \begin{align*}
-\frac{d}{dt}\frac{dL}{d\dot{x}} & =\frac{dL}{dx}\\
-m\ddot{x} & =-mgsin(\theta)+kx+m(l+x)\dot{\theta}^{2}
+ \frac{d}{dt}\frac{dL}{d\dot{x}} & =\frac{dL}{dx}\\
+ m\ddot{x} & = m(l+x)\dot{\theta}^{2}-mg(1-cos(\theta))-kx
 \end{align*}
 
-The RHS is the ma part of Newtons second law and the LHS is the gravitational
+The LHS is the ma part of Newtons second law and the RHS is the gravitational
 tangential force, the spring force, and the centrifugal force. 
 
-Solving this, gives f(x). 
+To find the angular equation of motion we use the Euler-Lagrange equation with respect 
+to $\theta$ 
 
-\[
-\frac{d}{dt}\frac{dL}{d\dot{\theta}}=\frac{dL}{d\theta}
-\]
+\begin{align*}
+ & \frac{d}{dt}\frac{dL}{d\dot{\theta}}=\frac{dL}{d\theta} \\ 
+ & \frac{d}{dt}m(l+x)^2 \dot{\theta} = mg(l+x)sin(\theta)\\
+ & m(l+x)^{2}\ddot{\theta} + 2m(l+x)\dot{x}\dot{\theta}=-mg(l+x)sin(\theta) 
+\end{align*}
 
-\[
-m(l+x)^{2}\ddot{\theta}=-mg(l+x)sin(\theta)
-\]
+This equation is the torque equation T = ma with the addition of the Coriolis force $2m\dot{x}\dot{\theta}$. 
 
-This equation reveals that $\text{mass}$ $\times$tangential acceleration
-= torque
 
 \end{proof}
 
+\subsection*{Appendix}
+equations of motion: differentialy equations that describe the dynamics of a system
 
-
-
+\subsection*{Additional Calculations}
+Equation of motion for Pendulum: 
+\begin{align*}
+    
+\end{align*}
 \end{document}
