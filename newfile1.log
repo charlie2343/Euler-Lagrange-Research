@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.16)  1 SEP 2024 13:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.16)  19 SEP 2024 14:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -127,7 +127,8 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count272
 \l__pdf_internal_box=\box52
-) (./newfile1.aux)
+)
+No file newfile1.aux.
 \openout1 = `newfile1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -144,7 +145,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
- (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count273
 \scratchdimen=\dimen150
@@ -304,9 +305,9 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 2563 strings out of 478268
- 37827 string characters out of 5846346
- 346123 words of memory out of 5000000
+ 2561 strings out of 478268
+ 37801 string characters out of 5846346
+ 346132 words of memory out of 5000000
  20774 multiletter control sequences out of 15000+600000
  476209 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
