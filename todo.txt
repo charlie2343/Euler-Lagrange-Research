@@ -13,10 +13,14 @@ Week 5/6
 1. Clean Up Arc Length : DONE 
 
 2. Work on Pendulum 
- - Write Down Just Pendulum 
- - Come up with a simpler example 
+ - Write Down Just Pendulum DONE
+ - Come up with a simpler example DONE
 
 3. Work on more examples 
- - From TomRocksMaths or perhaps an easier spring/pendulum example.
+ - From TomRocksMaths or perhaps an easier spring/pendulum example.DONE
  - Possibly some pendulum if you plan to still do the hard example. 
-4. Clean up the Proof. Getting there. 
+4. Clean up the Proof. Getting there. DONE
+
+- include code 
+- quantum Mechanics? 
+-Benfits with Constraint forces
